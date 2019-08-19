@@ -1828,7 +1828,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D REALMO";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D REALM";
 				PRODUCT_BUNDLE_IDENTIFIER = com.knetdemar.tasCar.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1851,7 +1851,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D REALMO";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D REALM";
 				PRODUCT_BUNDLE_IDENTIFIER = com.knetdemar.tasCar.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
@@ -2017,7 +2017,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D REALMO";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D REALM";
 				PRODUCT_BUNDLE_IDENTIFIER = com.knetdemar.tasCar.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = ADHOC;

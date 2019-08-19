@@ -12,6 +12,10 @@ Dependencies in this project are provided via Cocoapods. Please install all depe
 pod install
 `
 
+## Run by method Decode or RxRealm
+
+By default the <b>DEBUG</b> mode is in Realm, if you want change method remove the flag into <i>Build Settings - Other Swift Flags</i>
+
 ## Technologies
 - [x] Clean architecture ([RxSwift](https://github.com/ReactiveX/RxSwift) and MVVM over App layer)
 - [x] RxMoya [Moya](https://github.com/Moya/Moya)
