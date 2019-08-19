@@ -1,10 +1,10 @@
-<p align="center"><img src="https://github.com/KnetDeMar/TasCar/blob/master/TasCar/App/Resources/Assets.xcassets/AppIcon.appiconset/ai1024.png" height="512" alt="TasCar"></p>
+<p align="center"><img src="https://github.com/KnetDeMar/TasCarSample/blob/master/TasCar/App/Resources/Assets.xcassets/AppIcon.appiconset/ai1024.png" height="512" alt="TasCarSample"></p>
 
-# TasCar
+# TasCarSample
 
 Simple Example with clean architecture App for car appraised in Spain
 
-### Instalation
+### Installation
 
 Dependencies in this project are provided via Cocoapods. Please install all dependencies with
 
