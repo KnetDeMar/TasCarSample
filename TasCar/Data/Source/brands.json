@@ -1,0 +1,27 @@
+[
+{
+	"name": "Abarth",
+    "file": "abarth",
+    "hexColor": "DB0000"
+},
+{
+	"name": "Alfa Romeo",
+    "file": "alfaRomeo",
+    "hexColor": "7A0E29"
+},
+{
+    "name": "Alpine",
+    "file": "alpine",
+    "hexColor": "345CB7"
+},
+{
+    "name": "Aston Martin",
+    "file": "aston",
+    "hexColor": "3A3732"
+},
+{
+    "name": "Austin",
+    "file": "austin",
+    "hexColor": "483022"
+}
+]

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PickerViewController" customModule="TasCar" customModuleProvider="target">
+            <connections>
+                <outlet property="pickerView" destination="zrT-ju-7ek" id="MKF-Lz-Wgi"/>
+                <outlet property="view" destination="SC2-Sg-TMG" id="Bcq-xz-Uaw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="SC2-Sg-TMG">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zrT-ju-7ek">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
+                </pickerView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="zrT-ju-7ek" firstAttribute="top" secondItem="SC2-Sg-TMG" secondAttribute="top" id="6cY-tF-Jzx"/>
+                <constraint firstAttribute="trailing" secondItem="zrT-ju-7ek" secondAttribute="trailing" id="A4t-lb-8YJ"/>
+                <constraint firstAttribute="bottom" secondItem="zrT-ju-7ek" secondAttribute="bottom" priority="249" id="Qn8-rl-PJo"/>
+                <constraint firstItem="zrT-ju-7ek" firstAttribute="leading" secondItem="SC2-Sg-TMG" secondAttribute="leading" id="d8H-NV-HzB"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131.8840579710145" y="-152.00892857142856"/>
+        </view>
+    </objects>
+</document>

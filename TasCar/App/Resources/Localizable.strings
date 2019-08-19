@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  TasCar
+
+  Created by Enrique Canedo on 15/07/2019.
+  Copyright © 2019 Enrique Canedo. All rights reserved.
+*/
+
+// Commons
+"ok"="Aceptar";
+"title"="Tasador de coches";
+// Errors
+"unknown"="Error desconocido";
+"invalid_file"="Invalid file or path";
+"invalid_json"="Invalid json";
+"data_empty"="Data is empty";
+"no_brand_selected"="Debes seleccionar una marca para continuar";
+"wrong_file_config"="Invalid file of realm";
+// App
+"select_brand"="Seleccionar marca";
+"select_model"="Seleccionar modelo";
+"select_type"="Seleccionar tipo";
+"select_year"="Seleccionar año";
+"accept"="Aceptar";
+"info"="* Valor orientativo determinado en función de los años de utilización a aplicar a los precios fijados por el Ministerio de Hacienda y Función Pública, para vehículos de turismo ya matriculados.";
+"new"="Nueva tasación";

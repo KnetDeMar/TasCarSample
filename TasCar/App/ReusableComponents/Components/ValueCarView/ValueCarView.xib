@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ValueCarView" customModule="TasCar" customModuleProvider="target">
+            <connections>
+                <outlet property="priceLabel" destination="AMl-ia-sny" id="35d-0M-Srw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="F1S-G7-uzV">
+            <rect key="frame" x="0.0" y="0.0" width="292" height="196"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lE4-If-JWp">
+                    <rect key="frame" x="0.0" y="35" width="292" height="161"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMl-ia-sny">
+                            <rect key="frame" x="125" y="60.5" width="42" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Nkj-ow-25D"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="AMl-ia-sny" firstAttribute="top" secondItem="lE4-If-JWp" secondAttribute="top" priority="750" constant="15" id="3Rv-wu-ntF"/>
+                        <constraint firstAttribute="bottom" secondItem="AMl-ia-sny" secondAttribute="bottom" priority="750" constant="15" id="gKp-iH-N2c"/>
+                        <constraint firstItem="AMl-ia-sny" firstAttribute="centerX" secondItem="lE4-If-JWp" secondAttribute="centerX" id="wMX-k0-EVG"/>
+                        <constraint firstItem="AMl-ia-sny" firstAttribute="centerY" secondItem="lE4-If-JWp" secondAttribute="centerY" id="yWJ-6C-zgy"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="xzZ-Ce-MlD" firstAttribute="trailing" secondItem="lE4-If-JWp" secondAttribute="trailing" id="AxK-Vh-1yC"/>
+                <constraint firstItem="lE4-If-JWp" firstAttribute="top" secondItem="xzZ-Ce-MlD" secondAttribute="top" constant="35" id="X5b-tW-P6H"/>
+                <constraint firstItem="lE4-If-JWp" firstAttribute="leading" secondItem="xzZ-Ce-MlD" secondAttribute="leading" id="igw-8j-1FA"/>
+                <constraint firstItem="xzZ-Ce-MlD" firstAttribute="bottom" secondItem="lE4-If-JWp" secondAttribute="bottom" id="xFz-5G-d97"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="xzZ-Ce-MlD"/>
+            <point key="canvasLocation" x="-371.19999999999999" y="111.54422788605699"/>
+        </view>
+    </objects>
+</document>

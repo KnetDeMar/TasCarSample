@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WebViewController" customModule="TasCarSample" customModuleProvider="target">
+            <connections>
+                <outlet property="closeButton" destination="2Mb-XH-71I" id="P1L-bM-ZH6"/>
+                <outlet property="view" destination="RGl-3K-qgB" id="cyh-2I-By6"/>
+                <outlet property="webView" destination="g7l-jD-jxw" id="6i3-vD-Sbv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="RGl-3K-qgB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7l-jD-jxw">
+                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Mb-XH-71I">
+                    <rect key="frame" x="374" y="88" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="l1N-gd-pzP"/>
+                        <constraint firstAttribute="width" constant="40" id="s8m-qa-rd2"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="g7l-jD-jxw" firstAttribute="leading" secondItem="otl-6a-jQ1" secondAttribute="leading" id="BYP-bw-jSD"/>
+                <constraint firstItem="otl-6a-jQ1" firstAttribute="bottom" secondItem="g7l-jD-jxw" secondAttribute="bottom" id="RbI-mQ-X5Q"/>
+                <constraint firstItem="2Mb-XH-71I" firstAttribute="top" secondItem="otl-6a-jQ1" secondAttribute="top" id="YME-xN-q8t"/>
+                <constraint firstItem="otl-6a-jQ1" firstAttribute="trailing" secondItem="2Mb-XH-71I" secondAttribute="trailing" id="ZCt-Q8-HwU"/>
+                <constraint firstItem="otl-6a-jQ1" firstAttribute="trailing" secondItem="g7l-jD-jxw" secondAttribute="trailing" id="isp-qv-hnc"/>
+                <constraint firstItem="g7l-jD-jxw" firstAttribute="top" secondItem="otl-6a-jQ1" secondAttribute="top" id="jr4-SV-xaQ"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <viewLayoutGuide key="safeArea" id="otl-6a-jQ1"/>
+        </view>
+    </objects>
+</document>
