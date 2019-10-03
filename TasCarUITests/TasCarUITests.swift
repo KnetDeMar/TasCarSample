@@ -9,10 +9,16 @@
 import XCTest
 
 class TasCarUITests: XCTestCase {
+    
+    var app: XCUIApplication = XCUIApplication() {
+        didSet {
+            app.launchArguments.append("--uitesting")    
+        }
+    }
 
     override func setUp() {
         continueAfterFailure = false
-        XCUIApplication().launch()
+        app.launch()
     }
 
     override func tearDown() {
@@ -22,6 +28,10 @@ class TasCarUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testSelectorBrand() {
+        
     }
 
 }

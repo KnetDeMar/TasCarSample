@@ -13,6 +13,23 @@
 		5030166622FD51180062B96B /* BrandImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5030166322FD51180062B96B /* BrandImageView.swift */; };
 		5030166722FD51180062B96B /* BrandImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5030166422FD51180062B96B /* BrandImageView.xib */; };
 		5030166822FD51180062B96B /* BrandImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5030166522FD51180062B96B /* BrandImageViewModel.swift */; };
+		50729A8B234601AC0013A5AB /* Single+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B6B2C722E0B13B00BD7871 /* Single+Response.swift */; };
+		50729A8C234601AD0013A5AB /* Observable+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B6B2C522E0B10F00BD7871 /* Observable+Response.swift */; };
+		50729A8D234601AF0013A5AB /* MoyaProvider+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B6B2C322E0B0D300BD7871 /* MoyaProvider+Rx.swift */; };
+		50729A8F234603F20013A5AB /* BrandExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50729A8E234603F20013A5AB /* BrandExtension.swift */; };
+		50729A90234605C90013A5AB /* UIRectCorner+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A9CA2722F05175001C7C85 /* UIRectCorner+.swift */; };
+		50729A91234605DC0013A5AB /* RealmDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B5A13522F3052C0063E621 /* RealmDataManager.swift */; };
+		50729A922346068D0013A5AB /* FormError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B5A13322F2C9BD0063E621 /* FormError.swift */; };
+		50729A93234606A70013A5AB /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A9CA3022F083FF001C7C85 /* UILabel+.swift */; };
+		50729A94234606C90013A5AB /* BrandImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5030166322FD51180062B96B /* BrandImageView.swift */; };
+		50729A95234606D00013A5AB /* ValueCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A9CA2C22F05E0D001C7C85 /* ValueCarView.swift */; };
+		50729A96234606D80013A5AB /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5030167322FD8C8A0062B96B /* WebViewModel.swift */; };
+		50729A97234606DD0013A5AB /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5030167222FD8C8A0062B96B /* WebViewController.swift */; };
+		50729A98234606F90013A5AB /* BrandImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5030166522FD51180062B96B /* BrandImageViewModel.swift */; };
+		50729A99234606FE0013A5AB /* ValueCarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A9CA2B22F05E0D001C7C85 /* ValueCarViewModel.swift */; };
+		50729A9A234607070013A5AB /* RealmThreadWithRunLoopScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CDE3A122FC5A600014A933 /* RealmThreadWithRunLoopScheduler.swift */; };
+		50729A9B2346079C0013A5AB /* CheckBrandModelUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C1C29A230422AC001F1345 /* CheckBrandModelUseCaseImpl.swift */; };
+		50729A9C234608330013A5AB /* CheckBrandModelUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C1C29C2304232E001F1345 /* CheckBrandModelUseCase.swift */; };
 		507B029822EAE6E3006DBC5F /* eclipse.gif in Resources */ = {isa = PBXBuildFile; fileRef = 507B029722EAE6E3006DBC5F /* eclipse.gif */; };
 		507B029A22EB04A8006DBC5F /* BaseImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B029922EB04A8006DBC5F /* BaseImageProvider.swift */; };
 		508CD50B22F49D5F00D66FE1 /* tascar.realm in Resources */ = {isa = PBXBuildFile; fileRef = 508CD50A22F49D5F00D66FE1 /* tascar.realm */; };
@@ -256,6 +273,7 @@
 		5030167222FD8C8A0062B96B /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		5030167322FD8C8A0062B96B /* WebViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		5030167422FD8C8A0062B96B /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		50729A8E234603F20013A5AB /* BrandExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandExtension.swift; sourceTree = "<group>"; };
 		507B029722EAE6E3006DBC5F /* eclipse.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = eclipse.gif; sourceTree = "<group>"; };
 		507B029922EB04A8006DBC5F /* BaseImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseImageProvider.swift; sourceTree = "<group>"; };
 		508CD50A22F49D5F00D66FE1 /* tascar.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = tascar.realm; sourceTree = "<group>"; };
@@ -1008,6 +1026,7 @@
 		50BDAAC522E9B460002FE42A /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				50729A8E234603F20013A5AB /* BrandExtension.swift */,
 				509D1C5622EBB7FE00C87BB8 /* CarExtension.swift */,
 				50A0E9CD22EC6B9900BDB4F5 /* CarEntityExtension.swift */,
 			);
@@ -1586,14 +1605,18 @@
 				50A0E9DD22EC704600BDB4F5 /* CarCardView.swift in Sources */,
 				5093000922EEF252003C0709 /* CheckYearsByTypeModelUseCase.swift in Sources */,
 				50A0E9D322EC6F7200BDB4F5 /* BaseViewModel.swift in Sources */,
+				50729A98234606F90013A5AB /* BrandImageViewModel.swift in Sources */,
 				50A0E9E122EC706700BDB4F5 /* Theme.swift in Sources */,
 				50A0E9DF22EC704C00BDB4F5 /* InfoCarStackView.swift in Sources */,
 				509D1C4622EBB2C000C87BB8 /* GetBrandsUseCaseImpl.swift in Sources */,
 				50A0E9EC22EC712C00BDB4F5 /* BrandCollectionViewCell.swift in Sources */,
 				50A0E9E722EC70D200BDB4F5 /* BaseViewDelegate.swift in Sources */,
+				50729A99234606FE0013A5AB /* ValueCarViewModel.swift in Sources */,
+				50729A9A234607070013A5AB /* RealmThreadWithRunLoopScheduler.swift in Sources */,
 				50A0E9CB22EC326A00BDB4F5 /* PickerViewModel.swift in Sources */,
 				50BDAAD822E9C16F002FE42A /* GetCarModelAppraisedValueUseCaseImpl.swift in Sources */,
 				50A0E9DB22EC701B00BDB4F5 /* BrandCollectionViewModel.swift in Sources */,
+				50729A922346068D0013A5AB /* FormError.swift in Sources */,
 				50A0E9C322EC2C2F00BDB4F5 /* CheckTypesByModelUseCaseImpl.swift in Sources */,
 				50BDAAD122E9BEAD002FE42A /* BaseUseCaseImpl.swift in Sources */,
 				50A0E9CE22EC6B9900BDB4F5 /* CarEntityExtension.swift in Sources */,
@@ -1608,6 +1631,7 @@
 				509FE02622D4A69B005A1AEE /* SourceRepositoryImpl.swift in Sources */,
 				50A0E9D722EC6FCA00BDB4F5 /* BaseWireframe.swift in Sources */,
 				509D1C4922EBB2F100C87BB8 /* ImageRepository.swift in Sources */,
+				50729A8F234603F20013A5AB /* BrandExtension.swift in Sources */,
 				50A0E9E522EC70B000BDB4F5 /* UIViewController+.swift in Sources */,
 				50A0E9EA22EC710D00BDB4F5 /* UIColor+.swift in Sources */,
 				50A0E9D622EC6FC400BDB4F5 /* HomeViewModel.swift in Sources */,
@@ -1620,10 +1644,14 @@
 				50BDAACC22E9BE2F002FE42A /* BrandEntityDataMapper.swift in Sources */,
 				509FE02C22D4BE11005A1AEE /* Brand.swift in Sources */,
 				50A0E9E222EC707500BDB4F5 /* BrandModel.swift in Sources */,
+				50729A97234606DD0013A5AB /* WebViewController.swift in Sources */,
+				50729A8D234601AF0013A5AB /* MoyaProvider+Rx.swift in Sources */,
 				50A0E9E022EC704F00BDB4F5 /* InfoCarStackViewModel.swift in Sources */,
 				509D1C4E22EBB34400C87BB8 /* AppGateway.swift in Sources */,
+				50729A90234605C90013A5AB /* UIRectCorner+.swift in Sources */,
 				509D1C4822EBB2EB00C87BB8 /* GetTypesByModelUseCase.swift in Sources */,
 				50A0E9DE22EC704A00BDB4F5 /* CarCardViewModel.swift in Sources */,
+				50729A8B234601AC0013A5AB /* Single+Response.swift in Sources */,
 				50A0E9D922EC701200BDB4F5 /* PickerViewController.swift in Sources */,
 				509FE02922D4BD48005A1AEE /* Car.swift in Sources */,
 				509D1C4C22EBB32700C87BB8 /* ImageRepositoryImpl.swift in Sources */,
@@ -1632,10 +1660,13 @@
 				50BDAACF22E9BE9C002FE42A /* BaseGenericDataMapper.swift in Sources */,
 				509D1C4522EBB2BA00C87BB8 /* GetTypesByModelUseCaseImpl.swift in Sources */,
 				50B2886A22D3833400088704 /* DataTests.swift in Sources */,
+				50729A96234606D80013A5AB /* WebViewModel.swift in Sources */,
 				50BDAACE22E9BE66002FE42A /* BaseEntityDataMapper.swift in Sources */,
 				50BDAAC222E9B2BC002FE42A /* CarTests.swift in Sources */,
 				50A0E9D022EC6C3600BDB4F5 /* CarEntityTests.swift in Sources */,
 				50A0E9D822EC700900BDB4F5 /* HomeViewController.swift in Sources */,
+				50729A9C234608330013A5AB /* CheckBrandModelUseCase.swift in Sources */,
+				50729A8C234601AD0013A5AB /* Observable+Response.swift in Sources */,
 				509FE01522D47CB3005A1AEE /* DataManagerError.swift in Sources */,
 				50B2886022D375BF00088704 /* DataManager.swift in Sources */,
 				509FE02322D4A181005A1AEE /* CarEntity.swift in Sources */,
@@ -1645,12 +1676,14 @@
 				509D1C4722EBB2E300C87BB8 /* CarImage.swift in Sources */,
 				50A0E9DC22EC703D00BDB4F5 /* BaseViewController.swift in Sources */,
 				509FE03922D4C525005A1AEE /* BrandEntity.swift in Sources */,
+				50729A93234606A70013A5AB /* UILabel+.swift in Sources */,
 				50A0E9C422EC2C3C00BDB4F5 /* CheckTypesByModelUseCase.swift in Sources */,
 				50BDAAD222E9BEDA002FE42A /* String+.swift in Sources */,
 				50BDAADE22E9C55F002FE42A /* CarRepositoryImpl.swift in Sources */,
 				50A0E9D222EC6F6A00BDB4F5 /* CarModelDataMapper.swift in Sources */,
 				509D1C4122EBB2AB00C87BB8 /* GetModelsByBrandUseCase.swift in Sources */,
 				50BDAADB22E9C1A9002FE42A /* CarRepository.swift in Sources */,
+				50729A91234605DC0013A5AB /* RealmDataManager.swift in Sources */,
 				50A0E9E322EC709E00BDB4F5 /* UIImage+.swift in Sources */,
 				50A0E9E822EC70FE00BDB4F5 /* UIButton+.swift in Sources */,
 				50A0E9E422EC70AD00BDB4F5 /* UIView+.swift in Sources */,
@@ -1660,12 +1693,15 @@
 				509D1C4F22EBB34900C87BB8 /* AppService.swift in Sources */,
 				509D1C5122EBB36900C87BB8 /* Network.swift in Sources */,
 				509D1C4A22EBB31400C87BB8 /* CarImageEntityDataMapper.swift in Sources */,
+				50729A95234606D00013A5AB /* ValueCarView.swift in Sources */,
 				509D1C4322EBB2B500C87BB8 /* GetBrandsUseCase.swift in Sources */,
 				50BDAAD522E9C11A002FE42A /* GetCarModelAppraisedValueUseCase.swift in Sources */,
+				50729A9B2346079C0013A5AB /* CheckBrandModelUseCaseImpl.swift in Sources */,
 				50A0E9D422EC6F7700BDB4F5 /* BaseTypeAlias.swift in Sources */,
 				509D1C5022EBB34F00C87BB8 /* NetworkProxy.swift in Sources */,
 				509D1C4B22EBB31A00C87BB8 /* CarImageEntity.swift in Sources */,
 				50A0E9EE22EC713900BDB4F5 /* BaseImageProvider.swift in Sources */,
+				50729A94234606C90013A5AB /* BrandImageView.swift in Sources */,
 				50A0E9EF22ECC54800BDB4F5 /* BaseCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1874,11 +1910,12 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.knetdemar.tasCar.TasCarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TasCar.app/TasCar";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TasCarSample.app/TasCarSample";
 			};
 			name = Debug;
 		};
@@ -1896,11 +1933,12 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.knetdemar.tasCar.TasCarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TasCar.app/TasCar";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TasCarSample.app/TasCarSample";
 			};
 			name = Release;
 		};
@@ -1919,9 +1957,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.knetdemar.tasCar.TasCarUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TasCar;
+				TEST_TARGET_NAME = TasCarSample;
 			};
 			name = Debug;
 		};
@@ -1940,9 +1979,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.knetdemar.tasCar.TasCarUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TasCar;
+				TEST_TARGET_NAME = TasCarSample;
 			};
 			name = Release;
 		};
@@ -2040,11 +2080,12 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.knetdemar.tasCar.TasCarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TasCar.app/TasCar";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TasCarSample.app/TasCarSample";
 			};
 			name = AdHoc;
 		};
@@ -2063,9 +2104,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.knetdemar.tasCar.TasCarUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TasCar;
+				TEST_TARGET_NAME = TasCarSample;
 			};
 			name = AdHoc;
 		};

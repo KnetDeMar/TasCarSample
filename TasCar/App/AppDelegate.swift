@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupApplication(application: UIApplication) {
         setupLumberjack()
         setupNavigation()
+        setupUITests()
     }
     
     private func setupNavigation() {
@@ -42,6 +43,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         fileLogger.rollingFrequency = 3600 * 24 // 24 hours
         fileLogger.logFileManager.maximumNumberOfLogFiles = 7
         DDLog.add(fileLogger)
+    }
+    
+    private func setupUITests() {
+        guard CommandLine.arguments.contains("--uitesting") else { return }
+            
     }
     
 }

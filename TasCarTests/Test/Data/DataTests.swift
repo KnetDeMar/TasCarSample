@@ -12,7 +12,7 @@ final class DataTests: TasCarBaseTests {
     
     func testLoadDataExists() {
         do {
-            let observable = try DataManager.loadData(fileName: Files.fileBrands)
+            let observable = try DataManager.shared.loadData(fileName: Files.fileBrands)
             XCTAssertNotNil(observable.toBlocking().materialize())
         } catch let error {
             XCTFail("Expected result to complete without error, but received \(error.localizedDescription)")
@@ -21,7 +21,7 @@ final class DataTests: TasCarBaseTests {
     
     func testLoadDataFileNoExists() {
         do {
-            _ = try DataManager.loadData(fileName: FilesTest.fileNotExists)
+            _ = try DataManager.shared.loadData(fileName: FilesTest.fileNotExists)
             XCTFail("File don't should exists")
         } catch DataManagerError.invalidFile {
         } catch {
@@ -31,7 +31,7 @@ final class DataTests: TasCarBaseTests {
     
     func testLoadDataEmpty() {
         do {
-            _ = try DataManager.loadData(fileName: Files.fileEmpty)
+            _ = try DataManager.shared.loadData(fileName: Files.fileEmpty)
         } catch DataManagerError.noData { 
         } catch {
             XCTFail("Expected result to complete with error, but received \(DataManagerError.invalidFile.localizedDescription)")
@@ -39,7 +39,7 @@ final class DataTests: TasCarBaseTests {
     }
     
     func testLoadJsonBrands() {
-        DataManager.loadJson(type: BrandEntity.self, fileName: Files.fileBrands).subscribe { event in
+        DataManager.shared.loadJson(type: BrandEntity.self, fileName: Files.fileBrands).subscribe { event in
             switch event {
             case .success: break
             case .error(let error):
@@ -50,11 +50,16 @@ final class DataTests: TasCarBaseTests {
     
     func testLoadFilesBrand() {
         do {
-            let brands = try DataManager.loadJson(type: BrandEntity.self, fileName: Files.fileBrands)
+            let brands = try DataManager.shared.loadJson(type: BrandEntity.self, fileName: Files.fileBrands)
                 .toBlocking()
                 .single()
             try brands.forEach { brand in
-                _ = try DataManager.loadData(fileName: brand.file)
+                guard let file = brand.file else { 
+                    XCTFail("Expected result file as String, but received nil")   
+                    return
+                }
+                
+                _ = try DataManager.shared.loadData(fileName: file)
             }
         } catch let error {
             XCTFail("Expected result to complete without error, but received \(error.localizedDescription)")
@@ -62,11 +67,16 @@ final class DataTests: TasCarBaseTests {
     }
     
     func testLoadJsonBrand() {
-        DataManager.loadJson(type: BrandEntity.self, fileName: Files.fileBrands).subscribe { event in
+        DataManager.shared.loadJson(type: BrandEntity.self, fileName: Files.fileBrands).subscribe { event in
             switch event {
             case .success(let brands):
                 brands.forEach { brand in
-                    _ = self.checkLoadCarsJsonByBrand(file: brand.file)
+                    guard let file = brand.file else { 
+                        XCTFail("Expected result file as String, but received nil")    
+                        return
+                    }
+                    
+                    _ = self.checkLoadCarsJsonByBrand(file: file)
                 }
             case .error(let error):
                 XCTFail("Expected result to complete without error, but received \(error.localizedDescription)")    
@@ -81,7 +91,7 @@ final class DataTests: TasCarBaseTests {
     // MARK: - Private functions
     
     private func checkLoadCarsJsonByBrand(file: String) {
-        DataManager.loadJson(type: CarEntity.self, fileName: file).subscribe { event in
+        DataManager.shared.loadJson(type: CarEntity.self, fileName: file).subscribe { event in
             switch event {
             case .success: break 
             case .error(let error):

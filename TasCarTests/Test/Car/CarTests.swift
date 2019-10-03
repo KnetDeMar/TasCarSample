@@ -12,8 +12,9 @@ final class CarTest: TasCarBaseTests {
     
     func testModelsByBrand() {
         do {
+            let brand = Brand(file: ConstantsTest.carBrandDefault)
             let models = try GetModelByBrandUseCaseImpl()
-                .execute(withFile: FilesTest.fileDefault)
+                .execute(withBrand: brand)
                 .toBlocking()
                 .single()
             XCTAssert(!models.isEmpty, "Expected result car entities but received void")
@@ -23,8 +24,9 @@ final class CarTest: TasCarBaseTests {
     }
     
     func testModelsByErrorBrand() {
+        let brand = Brand(file: ConstantsTest.carBrandNokDefault)
         XCTAssertThrowsError(try GetModelByBrandUseCaseImpl()
-            .execute(withFile: FilesTest.fileNotExists)
+            .execute(withBrand: brand)
             .toBlocking()
             .single(), "Expected result throw error, but received not throw")
     }
@@ -32,8 +34,9 @@ final class CarTest: TasCarBaseTests {
     func testTypesByModelAndBrand() {
         do {
             let car = Car(brand: ConstantsTest.carBrandDefault, model: ConstantsTest.carModelDefault)
+            let brand = Brand(file: ConstantsTest.carBrandDefault)
             let types = try GetTypesByModelUseCaseImpl()
-                .execute(withFile: FilesTest.fileDefault, withCar: car)
+                .execute(withBrand: brand, withCar: car)
                 .toBlocking()
                 .single()
             XCTAssert(!types.isEmpty, "Expected result types by car default but received void")
@@ -44,9 +47,10 @@ final class CarTest: TasCarBaseTests {
     
     func testNoTypesByModelAndBrand() {
         do {
-            let car = Car(brand: ConstantsTest.carBrandDefault, model: ConstantsTest.noTypeModelDefault)
+            let car = Car(brand: ConstantsTest.carBrandDefault, model: ConstantsTest.carBrandNokDefault)
+            let brand = Brand(file: ConstantsTest.carBrandDefault)
             let typesVoid = try CheckTypesByModelUseCaseImpl()
-                .execute(withFile: FilesTest.fileDefault, withCar: car)
+                .execute(withBrand: brand, withCar: car)
                 .toBlocking()
                 .single()
             XCTAssert(typesVoid, "Expected result only one type of car but received more")
@@ -57,9 +61,10 @@ final class CarTest: TasCarBaseTests {
     
     func testNoTypesErrorByModelAndBrand() {
         do {
-            let car = Car(brand: ConstantsTest.carBrandDefault, model: ConstantsTest.carModelDefault)
+            let car = Car(brand: ConstantsTest.carBrandDefault, model: ConstantsTest.noTypeModelDefault)
+            let brand = Brand(file: ConstantsTest.carBrandDefault)
             let typesVoid = try CheckTypesByModelUseCaseImpl()
-                .execute(withFile: FilesTest.fileDefault, withCar: car)
+                .execute(withBrand: brand, withCar: car)
                 .toBlocking()
                 .single()
             XCTAssert(!typesVoid, "Expected result list of type with car but received minus")

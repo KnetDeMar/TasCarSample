@@ -12,6 +12,7 @@ struct ConstantsTest {
     
     static let priceDefault = 17_500
     static let carBrandDefault = "ABARTH"
+    static let carBrandNokDefault = "ABARTHI"
     static let noTypeModelDefault = "Grande Punto"
     static let carModelDefault = "124"
     

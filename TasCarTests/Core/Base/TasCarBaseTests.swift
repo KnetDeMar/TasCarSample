@@ -9,7 +9,6 @@
 import XCTest
 import RxSwift
 import RxBlocking
-@testable import TasCar
 
 class TasCarBaseTests: XCTestCase {
     

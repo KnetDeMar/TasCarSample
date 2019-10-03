@@ -19,8 +19,18 @@ final class Brand {
     var file: String = ""
     var color: DynamicColor = DynamicColor()
     
+    #if REALM
+    
     static func == (lhs: Brand, rhs: Brand) -> Bool {
         return lhs.idBrand == rhs.idBrand
     }
+    
+    #else
+    
+    static func == (lhs: Brand, rhs: Brand) -> Bool {
+        return lhs.name == rhs.name
+    }
+    
+    #endif
     
 }
