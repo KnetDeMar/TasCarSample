@@ -32,6 +32,7 @@
                 </wkWebView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Mb-XH-71I">
                     <rect key="frame" x="374" y="88" width="40" height="40"/>
+                    <accessibility key="accessibilityConfiguration" identifier="closeButton"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="l1N-gd-pzP"/>
                         <constraint firstAttribute="width" constant="40" id="s8m-qa-rd2"/>
@@ -40,6 +41,9 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <accessibility key="accessibilityConfiguration" identifier="PrivacyView">
+                <bool key="isElement" value="YES"/>
+            </accessibility>
             <constraints>
                 <constraint firstItem="g7l-jD-jxw" firstAttribute="leading" secondItem="otl-6a-jQ1" secondAttribute="leading" id="BYP-bw-jSD"/>
                 <constraint firstItem="otl-6a-jQ1" firstAttribute="bottom" secondItem="g7l-jD-jxw" secondAttribute="bottom" id="RbI-mQ-X5Q"/>

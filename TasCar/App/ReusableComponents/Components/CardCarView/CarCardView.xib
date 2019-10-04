@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CarCardView" customModule="TasCar" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CarCardView" customModule="TasCarSample" customModuleProvider="target">
             <connections>
                 <outlet property="carImageHeightConstraint" destination="hWv-cB-fze" id="U4b-DJ-dvS"/>
                 <outlet property="carImageView" destination="pBG-jM-4Z2" id="2ec-3J-xVV"/>
@@ -31,6 +31,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8t3-FG-AXP">
                     <rect key="frame" x="153" y="10" width="40" height="40"/>
                     <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <accessibility key="accessibilityConfiguration" identifier="infoButton"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="4St-jx-djQ"/>
                         <constraint firstAttribute="width" constant="40" id="a3D-d1-akD"/>

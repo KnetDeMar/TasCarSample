@@ -27,7 +27,7 @@ By default the <b>DEBUG</b> mode is in Realm, if you want change method remove t
 - [x] Copyright ([LicensePlist](https://github.com/mono0926/LicensePlist))
 - [x] Swift Best Practices ([SwiftLint](https://github.com/realm/SwiftLint))
 - [x] TDD
-- [ ] UI Tests
+- [x] UI Tests
 
 ## License
 All source code for Unreachable is released under the [MIT License][license].

@@ -30,6 +30,11 @@
 		50729A9A234607070013A5AB /* RealmThreadWithRunLoopScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CDE3A122FC5A600014A933 /* RealmThreadWithRunLoopScheduler.swift */; };
 		50729A9B2346079C0013A5AB /* CheckBrandModelUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C1C29A230422AC001F1345 /* CheckBrandModelUseCaseImpl.swift */; };
 		50729A9C234608330013A5AB /* CheckBrandModelUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C1C29C2304232E001F1345 /* CheckBrandModelUseCase.swift */; };
+		50729A9D234640080013A5AB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50C4FF0F22DCBB0F00792A6E /* Localizable.strings */; };
+		50729AA6234642260013A5AB /* TasCarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50729AA5234642260013A5AB /* TasCarUITests.swift */; };
+		50729AA8234642420013A5AB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50729AA7234642420013A5AB /* String+.swift */; };
+		50729AAB23464BEA0013A5AB /* ConstantsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50729AAA23464BEA0013A5AB /* ConstantsUITest.swift */; };
+		50729AAE23464D0E0013A5AB /* TasCarBaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50729AAD23464D0E0013A5AB /* TasCarBaseUITests.swift */; };
 		507B029822EAE6E3006DBC5F /* eclipse.gif in Resources */ = {isa = PBXBuildFile; fileRef = 507B029722EAE6E3006DBC5F /* eclipse.gif */; };
 		507B029A22EB04A8006DBC5F /* BaseImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B029922EB04A8006DBC5F /* BaseImageProvider.swift */; };
 		508CD50B22F49D5F00D66FE1 /* tascar.realm in Resources */ = {isa = PBXBuildFile; fileRef = 508CD50A22F49D5F00D66FE1 /* tascar.realm */; };
@@ -164,7 +169,6 @@
 		50A9CA2E22F05E0D001C7C85 /* ValueCarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A9CA2B22F05E0D001C7C85 /* ValueCarViewModel.swift */; };
 		50A9CA2F22F05E0D001C7C85 /* ValueCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A9CA2C22F05E0D001C7C85 /* ValueCarView.swift */; };
 		50A9CA3122F083FF001C7C85 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A9CA3022F083FF001C7C85 /* UILabel+.swift */; };
-		50B2880122D333FF00088704 /* TasCarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2880022D333FF00088704 /* TasCarUITests.swift */; };
 		50B2884222D3426400088704 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2882F22D3426400088704 /* HomeViewController.swift */; };
 		50B2884322D3426400088704 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B2883122D3426400088704 /* LaunchScreen.storyboard */; };
 		50B2884422D3426400088704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B2883222D3426400088704 /* Assets.xcassets */; };
@@ -274,6 +278,11 @@
 		5030167322FD8C8A0062B96B /* WebViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		5030167422FD8C8A0062B96B /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		50729A8E234603F20013A5AB /* BrandExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandExtension.swift; sourceTree = "<group>"; };
+		50729AA2234641E50013A5AB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50729AA5234642260013A5AB /* TasCarUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasCarUITests.swift; sourceTree = "<group>"; };
+		50729AA7234642420013A5AB /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		50729AAA23464BEA0013A5AB /* ConstantsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsUITest.swift; sourceTree = "<group>"; };
+		50729AAD23464D0E0013A5AB /* TasCarBaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasCarBaseUITests.swift; sourceTree = "<group>"; };
 		507B029722EAE6E3006DBC5F /* eclipse.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = eclipse.gif; sourceTree = "<group>"; };
 		507B029922EB04A8006DBC5F /* BaseImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseImageProvider.swift; sourceTree = "<group>"; };
 		508CD50A22F49D5F00D66FE1 /* tascar.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = tascar.realm; sourceTree = "<group>"; };
@@ -346,8 +355,6 @@
 		50B287DD22D333FE00088704 /* TasCarSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TasCarSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B287F122D333FF00088704 /* TasCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TasCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B287FC22D333FF00088704 /* TasCarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TasCarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		50B2880022D333FF00088704 /* TasCarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasCarUITests.swift; sourceTree = "<group>"; };
-		50B2880222D333FF00088704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50B2882F22D3426400088704 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		50B2883122D3426400088704 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50B2883222D3426400088704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -478,6 +485,56 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
+		50729A9F234641D60013A5AB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				50729AAC23464CE80013A5AB /* Base */,
+				50729AA923464BDB0013A5AB /* Constants */,
+				50729AA0234641D60013A5AB /* Extensions */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		50729AA0234641D60013A5AB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				50729AA7234642420013A5AB /* String+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		50729AA1234641E50013A5AB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				50729AA2234641E50013A5AB /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		50729AA4234642260013A5AB /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				50729AA5234642260013A5AB /* TasCarUITests.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		50729AA923464BDB0013A5AB /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				50729AAA23464BEA0013A5AB /* ConstantsUITest.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		50729AAC23464CE80013A5AB /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				50729AAD23464D0E0013A5AB /* TasCarBaseUITests.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		507B029622EAE6E3006DBC5F /* Loading */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,8 +636,9 @@
 		50B287FF22D333FF00088704 /* TasCarUITests */ = {
 			isa = PBXGroup;
 			children = (
-				50B2880022D333FF00088704 /* TasCarUITests.swift */,
-				50B2880222D333FF00088704 /* Info.plist */,
+				50729A9F234641D60013A5AB /* Core */,
+				50729AA1234641E50013A5AB /* Resources */,
+				50729AA4234642260013A5AB /* Test */,
 			);
 			path = TasCarUITests;
 			sourceTree = "<group>";
@@ -1256,6 +1314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50729A9D234640080013A5AB /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1710,7 +1769,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50B2880122D333FF00088704 /* TasCarUITests.swift in Sources */,
+				50729AAE23464D0E0013A5AB /* TasCarBaseUITests.swift in Sources */,
+				50729AA8234642420013A5AB /* String+.swift in Sources */,
+				50729AA6234642260013A5AB /* TasCarUITests.swift in Sources */,
+				50729AAB23464BEA0013A5AB /* ConstantsUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1864,7 +1926,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D REALM";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D REALMO";
 				PRODUCT_BUNDLE_IDENTIFIER = com.knetdemar.tasCar.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1887,7 +1949,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D REALM";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D REALMO";
 				PRODUCT_BUNDLE_IDENTIFIER = com.knetdemar.tasCar.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
@@ -1949,7 +2011,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BC33MW3RNW;
-				INFOPLIST_FILE = TasCarUITests/Info.plist;
+				INFOPLIST_FILE = TasCarUITests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1971,7 +2033,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BC33MW3RNW;
-				INFOPLIST_FILE = TasCarUITests/Info.plist;
+				INFOPLIST_FILE = TasCarUITests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2057,7 +2119,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D REALM";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D REALMO";
 				PRODUCT_BUNDLE_IDENTIFIER = com.knetdemar.tasCar.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = ADHOC;
@@ -2096,7 +2158,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BC33MW3RNW;
-				INFOPLIST_FILE = TasCarUITests/Info.plist;
+				INFOPLIST_FILE = TasCarUITests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
