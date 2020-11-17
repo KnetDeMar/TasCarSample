@@ -189,7 +189,7 @@ extension UIImage {
         }
     }
     
-    // MARK: - Private functions
+    // MARK: - Private methods
     
     private func modifiedImage(draw: (CGContext, CGRect) -> Void) -> UIImage {
         // using scale correctly preserves retina images

@@ -12,6 +12,8 @@ import Action
 
 final class BrandCollectionViewModel: BaseViewModel {
     
+    // MARK: - Attributes
+    
     private let brandModelDataMapper = BrandModelDataMapper()
     private let getBrandsUseCase = GetBrandsUseCaseImpl()
     private var selectRelay: BehaviorRelay<BrandModel?>?
@@ -61,18 +63,16 @@ final class BrandCollectionViewModel: BaseViewModel {
         reloadIndexPath.onNext([indexPath] + lastSelectionArray)
     }
     
-    // MARK: - Private functions
+    // MARK: - Private methods
     
     private func retrieveData() {
         _ = getBrandsUseCase.execute()
             .subscribeOn(RealmDataManager.shared.realmScheduler)
             .observeOn(MainScheduler.instance)
             .subscribe { [weak self] event in
-                guard let self = self else { return }
-                
                 switch event {
                 case .success(let brands):
-                    self.brandModelList.accept(self.brandModelDataMapper.transform(domainList: brands))
+                    self?.brandModelList.accept(self?.brandModelDataMapper.transform(domainList: brands) ?? [])
                 case .error: break
                 }
             }.disposed(by: disposeBag)

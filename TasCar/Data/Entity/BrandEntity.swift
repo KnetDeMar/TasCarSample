@@ -48,9 +48,9 @@ struct BrandEntity: Decodable {
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        name = try values.decode(String.self, forKey: .name)
-        file = try values.decode(String.self, forKey: .file)
-        color = try values.decode(String.self, forKey: .hexColor)
+        name = try? values.decode(String.self, forKey: .name)
+        file = try? values.decode(String.self, forKey: .file)
+        color = try? values.decode(String.self, forKey: .hexColor)
     }
     
 }

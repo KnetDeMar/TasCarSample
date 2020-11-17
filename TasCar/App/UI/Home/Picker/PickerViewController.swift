@@ -10,6 +10,8 @@ import UIKit
 
 final class PickerViewController: BaseViewController<PickerViewModel>, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    // MARK: - Attributes UI
+    
     @IBOutlet private weak var pickerView: UIPickerView!
     
     // MARK: - LifeCycle
@@ -24,19 +26,17 @@ final class PickerViewController: BaseViewController<PickerViewModel>, UIPickerV
         setupPickerView()
     }
     
+    // MARK: - Setups
+    
     override func setupRx() {
         super.setupRx()
         
         viewModel.carModelListFiltered.asObservable().subscribe(onNext: { [weak self] _ in
-            guard let self = self else { return }
-            
-            self.pickerView.reloadAllComponents()
+            self?.pickerView.reloadAllComponents()
         }).disposed(by: disposeBag)
         
         viewModel.carModelYearList.asObservable().subscribe(onNext: { [weak self] _ in
-            guard let self = self else { return }
-            
-            self.pickerView.reloadAllComponents()
+            self?.pickerView.reloadAllComponents()
         }).disposed(by: disposeBag)
     }
     
@@ -56,7 +56,7 @@ final class PickerViewController: BaseViewController<PickerViewModel>, UIPickerV
     // MARK: - UIPickerViewDataSource
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return viewModel.numberOfComponents
+        return viewModel.numberOfComponents()
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

@@ -36,7 +36,7 @@ struct Constants {
 
 // MARK: - Connection
 
-struct Connection {
+enum Connection {
     
     static let retries = 2
     
@@ -44,7 +44,7 @@ struct Connection {
 
 // MARK: - File
 
-struct Files {
+enum Files {
     
     static let fileBrands = "brands"
     static let fileExtension = "json"
@@ -56,7 +56,7 @@ struct Files {
 
 // MARK: - Animate files
 
-struct Animation {
+enum Animation {
     
     static let timeInterval = 0.1
     static let layers: [String] = {
@@ -69,13 +69,13 @@ struct Animation {
 
 #if REALM
 
-struct RealmConfiguration {
+enum RealmConfiguration {
     
     static private let bundle = Bundle.main.url(forResource: "tascar", withExtension: "realm")
     static private let publicKey: Data? = RealmConfiguration.sha512(key: "com.knetdemar.tascar.realm")
     static let config = Realm.Configuration(fileURL: RealmConfiguration.bundle, encryptionKey: RealmConfiguration.publicKey, readOnly: true)
     
-    // MARK: - Private static functions
+    // MARK: - Private static methods
     
     static private func sha512(key: String) -> Data? {
         guard let stringData = key.data(using: .utf8) else { return nil }

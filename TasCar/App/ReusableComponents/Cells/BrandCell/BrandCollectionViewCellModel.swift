@@ -10,9 +10,13 @@ import RxSwift
 
 final class BrandCollectionViewCellModel {
 
+    // MARK: - Attributes
+    
     let image = BehaviorSubject<UIImage?>(value: nil)
     let selected = BehaviorSubject<Bool>(value: false)
     var cgColor = ThemeColor.transparent.cgColor
+    
+    // MARK: - Setups
     
     func setup(withBrandModel brandModel: BrandModel, selected: Bool = false) {
         cgColor = brandModel.color.cgColor

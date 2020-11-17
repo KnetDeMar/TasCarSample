@@ -88,7 +88,7 @@ final class DataTests: TasCarBaseTests {
         self.measure { }
     }
     
-    // MARK: - Private functions
+    // MARK: - Private methods
     
     private func checkLoadCarsJsonByBrand(file: String) {
         DataManager.shared.loadJson(type: CarEntity.self, fileName: file).subscribe { event in

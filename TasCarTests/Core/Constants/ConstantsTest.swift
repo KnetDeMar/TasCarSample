@@ -8,7 +8,7 @@
 
 // MARK: - Constants
 
-struct ConstantsTest {
+enum ConstantsTest {
     
     static let priceDefault = 17_500
     static let carBrandDefault = "ABARTH"
@@ -20,7 +20,7 @@ struct ConstantsTest {
 
 // MARK: - File
 
-struct FilesTest {
+enum FilesTest {
     
     static let fileNotExists = "lsldfjsdf"
     static let fileDefault = "abarth" 
@@ -29,7 +29,7 @@ struct FilesTest {
 
 // MARK: - Years
 
-struct YearsValidate {
+enum YearsValidate {
     
     static let validYearRange = "2001-2012"
     static let validYearInitial = "2001-"

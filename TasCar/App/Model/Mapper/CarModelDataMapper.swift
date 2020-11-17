@@ -11,37 +11,40 @@ final class CarModelDataMapper: BaseModelDataMapper<CarModel, Car>, BaseModelGen
     private let brandModelDataMapper = BrandModelDataMapper()
     
     func transform(domain: Car?) -> CarModel {
-        if let domain = domain {
-            let model = CarModel()
-            model.model = domain.model
-            #if REALM  
-            model.brand = brandModelDataMapper.transform(domain: domain.brand)
-            #else
-            model.brand = domain.brand
-            #endif
-            model.type = domain.type
-            model.years = domain.years
-            model.price = domain.price
-            return model
+        guard let domain = domain else {
+            return CarModel()
         }
-        return CarModel()
+        
+        let model = CarModel()
+        model.model = domain.model
+        #if REALM
+        model.brand = brandModelDataMapper.transform(domain: domain.brand)
+        #else
+        model.brand = domain.brand
+        #endif
+        model.type = domain.type
+        model.years = domain.years
+        model.price = domain.price
+        return model
+        
     }
     
     func inverseTransform(model: CarModel?) -> Car {
-        if let model = model {
-            let domain = Car()
-            domain.model = model.model
-            #if REALM  
-            domain.brand = brandModelDataMapper.inverseTransform(model: model.brand)
-            #else
-            domain.brand = model.brand
-            #endif
-            domain.type = model.type
-            domain.years = model.years
-            domain.price = model.price
-            return domain
+        guard let model = model else {
+            return Car()
         }
-        return Car()
+        
+        let domain = Car()
+        domain.model = model.model
+        #if REALM  
+        domain.brand = brandModelDataMapper.inverseTransform(model: model.brand)
+        #else
+        domain.brand = model.brand
+        #endif
+        domain.type = model.type
+        domain.years = model.years
+        domain.price = model.price
+        return domain
     }
     
 }

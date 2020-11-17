@@ -70,6 +70,8 @@ enum HomeStateType: Int {
 
 final class HomeViewModel: BaseViewModel {
     
+    // MARK: - Attributes
+    
     private let homeColorDefault = ThemeColor.main.color.lighter(amount: 0.5)
     private let searchImagesByModelUseCase = SearchImagesByModelUseCaseImpl()
     private let getCarModelAppraisedValueUseCase = GetCarModelAppraisedValueUseCaseImpl()
@@ -94,6 +96,8 @@ final class HomeViewModel: BaseViewModel {
         return brandModel.color
     }
     
+    // MARK: - Public methods
+    
     func tapOnNextHomeState() {
         validate()
     }
@@ -112,10 +116,10 @@ final class HomeViewModel: BaseViewModel {
         _ = searchImagesByModelUseCase.execute(withQuery: type ? carModel.queryType : carModel.query)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
-            .subscribe { event in
+            .subscribe { [weak self] event in
                 switch event {
                 case .success(let media):
-                    self.carImageUrl.onNext(media?.mediaFullSize)
+                    self?.carImageUrl.onNext(media?.mediaFullSize)
                 case .error: break
                 }
             }.disposed(by: disposeBag)
@@ -128,10 +132,10 @@ final class HomeViewModel: BaseViewModel {
         _ = getCarModelAppraisedValueUseCase.execute(withCar: car, yearSelected: yearRelay.value)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
-            .subscribe { event in
+            .subscribe { [weak self] event in
                 switch event {
                 case .success(let price):
-                    self.value.onNext(price.currency)
+                    self?.value.onNext(price.currency)
                 case .error: break
                 }
             }.disposed(by: disposeBag)
@@ -160,7 +164,7 @@ final class HomeViewModel: BaseViewModel {
         wireframe.displayWebView(type: .trademark, color: brandModel?.color)
     }
     
-    // MARK: - Private functions
+    // MARK: - Private methods
     
     private func validate() {
         do {
@@ -200,14 +204,14 @@ final class HomeViewModel: BaseViewModel {
         _ = Single.zip(checkTypesByModelUseCase.execute(withCar: car), checkYearsByTypeModelUseCase.execute(withCar: car))
             .subscribeOn(RealmDataManager.shared.realmScheduler)
             .observeOn(MainScheduler.instance)
-            .subscribe { event in
+            .subscribe { [weak self] event in
                 switch event {
                 case .success(let hasTypes, _) where hasTypes:
-                    self.homeState.accept(.type)
+                    self?.homeState.accept(.type)
                 case .success(_, let hasYears) where hasYears:
-                    self.homeState.accept(.year)
+                    self?.homeState.accept(.year)
                 case .success:
-                    self.homeState.accept(.result)
+                    self?.homeState.accept(.result)
                 case .error: break
                 }
             }.disposed(by: disposeBag)
@@ -218,14 +222,14 @@ final class HomeViewModel: BaseViewModel {
         _ = Single.zip(checkTypesByModelUseCase.execute(withBrand: brand, withCar: car), checkYearsByTypeModelUseCase.execute(withCar: car))
             .subscribeOn(RealmDataManager.shared.realmScheduler)
             .observeOn(MainScheduler.instance)
-            .subscribe { event in
+            .subscribe { [weak self] event in
                 switch event {
                 case .success(let hasTypes, _) where hasTypes:
-                    self.homeState.accept(.type)
+                    self?.homeState.accept(.type)
                 case .success(_, let hasYears) where hasYears:
-                    self.homeState.accept(.year)
+                    self?.homeState.accept(.year)
                 case .success:
-                    self.homeState.accept(.result)
+                    self?.homeState.accept(.result)
                 case .error: break
                 }
             }.disposed(by: disposeBag)
@@ -240,12 +244,12 @@ final class HomeViewModel: BaseViewModel {
         _ = checkYearsByTypeModelUseCase.execute(withCar: car)
             .subscribeOn(RealmDataManager.shared.realmScheduler)
             .observeOn(MainScheduler.instance)
-            .subscribe { event in
+            .subscribe { [weak self] event in
                 switch event {
                 case .success(let hasYears) where hasYears:
-                    self.homeState.accept(.year)
+                    self?.homeState.accept(.year)
                 case .success:
-                    self.homeState.accept(.result)
+                    self?.homeState.accept(.result)
                 case .error: break
                 }
             }.disposed(by: disposeBag)
@@ -258,14 +262,14 @@ final class HomeViewModel: BaseViewModel {
         _ = checkBrandModelUseCase.execute(withBrand: brand)
             .subscribeOn(RealmDataManager.shared.realmScheduler)
             .observeOn(MainScheduler.instance)
-            .subscribe { event in
+            .subscribe { [weak self] event in
                 switch event {
                 case .success(let modelStatus) where modelStatus.status == .onlyWithYear || modelStatus.status == .only:
-                    self.carModelRelay.accept(self.carModelDataMapper.transform(domain: modelStatus.car))
-                    self.homeState.accept(modelStatus.status == .onlyWithYear ? .year : .result)
-                    self.selectedBrandModel()
+                    self?.carModelRelay.accept(self?.carModelDataMapper.transform(domain: modelStatus.car))
+                    self?.homeState.accept(modelStatus.status == .onlyWithYear ? .year : .result)
+                    self?.selectedBrandModel()
                 case .success:
-                    self.homeState.accept(.model)
+                    self?.homeState.accept(.model)
                 case .error: break
                 }
             }.disposed(by: disposeBag)

@@ -12,9 +12,13 @@ enum InfoCarType { case model, type, year, none }
 
 final class InfoCarStackViewModel {
     
+    // MARK: - Attributes
+    
     let carHelper = BehaviorSubject<CarCardHelper?>(value: nil)
     let visible = BehaviorSubject<Bool>(value: false)
     let color = BehaviorSubject(value: ThemeColor.transparent.color)
+    
+    // MARK: - Setups
     
     func setup(withCarModel carModel: CarModel? = nil, withColor color: UIColor = ThemeColor.transparent.color, type: InfoCarType = .none, year: Int? = nil) {
         guard let carModel = carModel else { 
@@ -40,7 +44,7 @@ final class InfoCarStackViewModel {
         }
     }
     
-    // MARK: - Private functions
+    // MARK: - Private methods
     
     private func clearCard() {
         carHelper.onNext(nil)

@@ -10,8 +10,12 @@ import RxSwift
 
 final class ValueCarViewModel {
     
+    // MARK: - Attributes
+    
     let color = BehaviorSubject(value: ThemeColor.main.color)
     let price = BehaviorSubject(value: "")
+    
+    // MARK: - Setups
     
     func setup(withPrice price: String, withColor color: UIColor) {
         self.color.onNext(color)

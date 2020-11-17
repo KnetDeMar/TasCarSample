@@ -34,7 +34,7 @@ class BaseCollectionCellView<VM>: UICollectionViewCell, BaseViewDelegate {
         setupRx()
     }
     
-    // MARK: - Static functions / properties
+    // MARK: - Static methods / properties
     
     static var reuseIdentifier: String {
         return String(describing: self.self)

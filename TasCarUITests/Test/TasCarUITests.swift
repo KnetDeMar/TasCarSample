@@ -75,7 +75,7 @@ final class TasCarUITests: TasCarBaseUITests {
         XCTAssertTrue(app.buttons[TasCarUIType.new.button.uppercased()].exists, "Expected button with new appraising value but received other")
     }
     
-    // MARK: - Private functions
+    // MARK: - Private methods
     
     private func selectButtonAndElement(type: TasCarUIType) {
         app.buttons[type.button.uppercased()].tap()

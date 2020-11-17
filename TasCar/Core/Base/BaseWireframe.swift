@@ -38,7 +38,7 @@ class BaseWireframe {
         presenterViewController.dismiss(animated: true, completion: nil)
     }
     
-    // MARK: - Private functions
+    // MARK: - Private methods
     
     private func displayScreenMode(displayMode: DisplayMode, viewController: UIViewController) {
         switch displayMode {

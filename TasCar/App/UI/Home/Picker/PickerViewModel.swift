@@ -48,6 +48,14 @@ enum PickerViewType {
 
 final class PickerViewModel: BaseViewModel {
     
+    // MARK: - Constants
+    
+    private enum Constants {
+        static let numberOfComponents: Int = 1
+    }
+    
+    // MARK: - Attributes
+    
     private let getModelByBrandUseCase = GetModelByBrandUseCaseImpl()
     private let getTypesByModelUseCase = GetTypesByModelUseCaseImpl()
     private let getYearsByCarUseCase = GetYearsByCarUseCaseImpl()
@@ -57,7 +65,6 @@ final class PickerViewModel: BaseViewModel {
     private var carModelList = [CarModel]()
     private var carModelRelay: BehaviorRelay<CarModel?>?
     private var yearRelay: BehaviorRelay<Int?>?
-    let numberOfComponents: Int = 1
     let carModelListFiltered = BehaviorRelay<[CarModel]>(value: [])
     let carModelYearList = BehaviorRelay<[Int]>(value: [])
     
@@ -71,6 +78,10 @@ final class PickerViewModel: BaseViewModel {
     }
     
     // MARK: - PickerView values methods
+    
+    func numberOfComponents() -> Int {
+        return Constants.numberOfComponents
+    }
     
     func numberOfRowsInComponent () -> Int {
         switch type {
@@ -107,7 +118,7 @@ final class PickerViewModel: BaseViewModel {
         }
     }
     
-    // MARK: - Private functions
+    // MARK: - Private methods
     
     private func retrieveData() {
         switch type {
@@ -128,7 +139,9 @@ final class PickerViewModel: BaseViewModel {
         _ = getModelByBrandUseCase.execute(withBrand: brand)
             .subscribeOn(RealmDataManager.shared.realmScheduler)
             .observeOn(MainScheduler.instance)
-            .subscribe { event in
+            .subscribe { [weak self] event in
+                guard let self = self else { return }
+                
                 switch event {
                 case .success(let cars): 
                     self.carModelList = self.carModelDataMapper.transform(domainList: cars)
@@ -151,7 +164,9 @@ final class PickerViewModel: BaseViewModel {
         _ = getTypesByModelUseCase.execute(withCar: car)
             .subscribeOn(RealmDataManager.shared.realmScheduler)
             .observeOn(MainScheduler.instance)
-            .subscribe { event in
+            .subscribe { [weak self] event in
+                guard let self = self else { return }
+                
                 switch event {
                 case .success(let cars):
                     self.carModelListFiltered.accept(self.carModelDataMapper.transform(domainList: cars))
@@ -168,7 +183,9 @@ final class PickerViewModel: BaseViewModel {
         _ = getTypesByModelUseCase.execute(withBrand: brand, withCar: car)
             .subscribeOn(RealmDataManager.shared.realmScheduler)
             .observeOn(MainScheduler.instance)
-            .subscribe { event in
+            .subscribe { [weak self] event in
+                guard let self = self else { return }
+                
                 switch event {
                 case .success(let cars):
                     self.carModelListFiltered.accept(self.carModelDataMapper.transform(domainList: cars))
@@ -189,12 +206,12 @@ final class PickerViewModel: BaseViewModel {
         _ = getYearsByCarUseCase.execute(withCar: car)
             .subscribeOn(RealmDataManager.shared.realmScheduler)
             .observeOn(MainScheduler.instance)
-            .subscribe { event in
+            .subscribe { [weak self] event in
                 switch event {
                 case .success(let years):
-                    self.carModelYearList.accept(years) 
+                    self?.carModelYearList.accept(years)
                     if let firstYear = years.first {
-                        self.yearRelay?.accept(firstYear)
+                        self?.yearRelay?.accept(firstYear)
                     }
                 case .error: break
                 }

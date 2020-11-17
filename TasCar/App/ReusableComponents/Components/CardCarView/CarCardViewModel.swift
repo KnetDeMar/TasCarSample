@@ -13,6 +13,8 @@ import Kingfisher
 
 final class CarCardViewModel {
     
+    // MARK: - Attributes
+    
     private let imageDownloader = ImageDownloader(name: Constants.imageDownloaderTask)
     private let logoSizeDefault: CGFloat = 200.0
     let imageHeight = BehaviorSubject<ImageHeight?>(value: nil)
@@ -26,6 +28,8 @@ final class CarCardViewModel {
     }
     var infoAction: CocoaAction?
     
+    // MARK: - Setups
+    
     func setup(withUrl url: URL? = nil, withColor color: UIColor = ThemeColor.main.color, infoAction: CocoaAction) {
         imageDownloader.cancelAll()
         self.color.accept(color)
@@ -37,13 +41,13 @@ final class CarCardViewModel {
         }
     }
     
-    // MARK: - Public functions
+    // MARK: - Public methods
     
     func tapOnInfo() {
         infoAction?.execute()
     }
     
-    // MARK: - Private functions
+    // MARK: - Private methods
     
     private func loadImage(withUrl url: URL, infoAction: CocoaAction) {
         createGifImage { [weak self] urlLoading in

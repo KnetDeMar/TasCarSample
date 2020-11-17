@@ -11,30 +11,32 @@ import UIKit
 final class BrandModelDataMapper: BaseModelDataMapper<BrandModel, Brand>, BaseModelGenericDataMapper {
     
     func transform(domain: Brand?) -> BrandModel {
-        if let domain = domain {
-            let model = BrandModel()
-            model.idBrand = domain.idBrand
-            model.name = domain.name
-            if let image = UIImage(named: domain.image) {
-                model.image = image
-            }
-            model.file = domain.file
-            model.color = domain.color
-            return model
+        guard let domain = domain else {
+            return BrandModel()
         }
-        return BrandModel()
+        
+        let model = BrandModel()
+        model.idBrand = domain.idBrand
+        model.name = domain.name
+        if let image = UIImage(named: domain.image) {
+            model.image = image
+        }
+        model.file = domain.file
+        model.color = domain.color
+        return model
     }
     
     func inverseTransform(model: BrandModel?) -> Brand {
-        if let model = model {
-            let domain = Brand()
-            domain.idBrand = model.idBrand
-            domain.file = model.file
-            domain.name = model.name
-            domain.color = model.color
-            return domain
+        guard let model = model else {
+            return Brand()
         }
-        return Brand()
+        
+        let domain = Brand()
+        domain.idBrand = model.idBrand
+        domain.file = model.file
+        domain.name = model.name
+        domain.color = model.color
+        return domain
     }
     
 }

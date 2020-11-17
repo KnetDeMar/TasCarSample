@@ -28,7 +28,7 @@ final class DataManager {
         return try Single.just(readFile(fileName: fileName))
     }
     
-    // MARK: - Private functions
+    // MARK: - Private methods
     
     private func logError(_ error: Error) {
         DDLogError(error.localizedDescription)

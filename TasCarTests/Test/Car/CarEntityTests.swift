@@ -97,7 +97,7 @@ final class CarEntityTest: TasCarBaseTests {
         checkYears(withType: .yearOnlyInvalid)   
     }
     
-    // MARK: - Private test functions
+    // MARK: - Private test methods
     
     private func checkYears(withType type: CarYearsTestType) {
         do {

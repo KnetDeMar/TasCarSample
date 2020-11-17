@@ -20,7 +20,7 @@ final class CarRepositoryImpl: CarRepository {
         return Single.just(car.years)
     }
     
-    // MARK: - Private functions
+    // MARK: - Private methods
     
     /// Function that return the percentage to subtract from the price total 
     ///

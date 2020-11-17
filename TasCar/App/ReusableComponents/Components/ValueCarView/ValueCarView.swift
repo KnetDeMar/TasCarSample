@@ -11,7 +11,11 @@ import RxSwift
 
 final class ValueCarView: BaseView {
     
+    // MARK: - Attributes UI
+    
     @IBOutlet weak var priceLabel: UILabel!
+    
+    // MARK: - ViewModel
     
     var viewModel = ValueCarViewModel()
     
@@ -50,9 +54,7 @@ final class ValueCarView: BaseView {
         viewModel.price.bind(to: priceLabel.rx.text).disposed(by: disposeBag)
         
         viewModel.color.subscribe(onNext: { [weak self] color in 
-            guard let self = self else { return }
-            
-            self.priceLabel.setup(withColor: color)
+            self?.priceLabel.setup(withColor: color)
         }).disposed(by: disposeBag)
     }
     

@@ -9,12 +9,13 @@
 final class CarImageModelDataMapper: BaseModelDataMapper<CarImageModel, CarImage>, BaseModelGenericDataMapper {
     
     func transform(domain: CarImage?) -> CarImageModel {
-        if let domain = domain {
-            let model = CarImageModel()
-            model.image = domain.images.first?.mediaFullSize
-            return model
+        guard let domain = domain else {
+            return CarImageModel()
         }
-        return CarImageModel()
+        
+        let model = CarImageModel()
+        model.image = domain.images.first?.mediaFullSize
+        return model
     }
     
     func inverseTransform(model: CarImageModel?) -> CarImage {

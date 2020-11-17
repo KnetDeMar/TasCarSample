@@ -11,7 +11,11 @@ import RxSwift
 
 class BaseView: UIView, BaseViewDelegate {
     
+    // MARK: - Attributes UI
+    
     @IBOutlet weak var view: UIView!
+    
+    // MARK: - Attributes
     
     var disposeBag = DisposeBag()
     
@@ -33,7 +37,7 @@ class BaseView: UIView, BaseViewDelegate {
         setupRx()
     }
     
-    // MARK: - Private functions
+    // MARK: - Private methods
     
     private func nibSetup() {
         backgroundColor = UIColor.clear

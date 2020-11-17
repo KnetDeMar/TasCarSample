@@ -27,8 +27,12 @@ enum WebViewType {
 
 final class WebViewModel: BaseViewModel {
     
+    // MARK: - Attributes UI
+    
     let color = BehaviorSubject(value: ThemeColor.main.color)
     let url = BehaviorSubject<URL?>(value: nil)
+    
+    // MARK: - Setups
     
     func setup(withURL url: URL, withColor color: UIColor? = ThemeColor.main.color) {
         if let color = color {
@@ -36,6 +40,8 @@ final class WebViewModel: BaseViewModel {
         }
         self.url.onNext(url)
     }
+    
+    // MARK: - Public methods
     
     func dismiss() {
         wireframe.dismissViewController()

@@ -10,6 +10,8 @@ import UIKit
 
 final class HomeViewController: BaseViewController<HomeViewModel> {
     
+    // MARK: - Attributes UI
+    
     @IBOutlet private weak var containerCardShadowView: UIView!
     @IBOutlet private weak var brandImageView: BrandImageView!
     @IBOutlet private weak var containerShadowView: UIView!
@@ -25,6 +27,8 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     @IBOutlet private weak var infoLabel: UILabel!
     @IBOutlet private weak var selectionContainerHeightConstraint: NSLayoutConstraint!
     @IBOutlet private var valueCarBottomConstraint: NSLayoutConstraint!
+    
+    // MARK: - ViewModel
     
     override func createViewModel() -> HomeViewModel {
         return HomeViewModel()
@@ -63,34 +67,26 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         viewModel.homeColor.bind(to: view.rx.backgroundColor).disposed(by: disposeBag)
         
         selectionButton.rx.tap.subscribe(onNext: { [weak self] _ in
-            guard let self = self else { return }
-            
-            self.viewModel.tapOnNextHomeState()
+            self?.viewModel.tapOnNextHomeState()
         }).disposed(by: disposeBag)
         
         reStartButton.rx.tap.subscribe(onNext: { [weak self] _ in
-            guard let self = self else { return }
-            
-            self.viewModel.tapOnReStart()
+            self?.viewModel.tapOnReStart()
         }).disposed(by: disposeBag)
         
         viewModel.homeState.subscribe(onNext: { [weak self] homeState in
-            guard let self = self else { return }
-            
             if homeState == .brand {
-                self.viewModel.clear()
+                self?.viewModel.clear()
             }
-            self.selectionButton.setTitle(homeState.title.uppercased(), for: .normal)
-            self.addContainerViewController(homeState)
+            self?.selectionButton.setTitle(homeState.title.uppercased(), for: .normal)
+            self?.addContainerViewController(homeState)
         }).disposed(by: disposeBag)
         
         viewModel.brandImage.asObserver().subscribe(onNext: { [weak self] image in
-            guard let self = self else { return }
-            
-            self.brandImageView.viewModel.setup(withImage: image)
-            self.brandImageView.isHidden = image == nil
-            self.infoCarStackView.isHidden = image == nil
-            self.changeColor(self.viewModel.colorBrand)
+            self?.brandImageView.viewModel.setup(withImage: image)
+            self?.brandImageView.isHidden = image == nil
+            self?.infoCarStackView.isHidden = image == nil
+            self?.changeColor(self?.viewModel.colorBrand ?? UIColor.clear)
         }).disposed(by: disposeBag)
         
         viewModel.carImageUrl.bind { [weak self] url in
@@ -110,14 +106,12 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         }).disposed(by: disposeBag)
         
         viewModel.infoAction.completions.subscribe(onNext: { [weak self] _ in
-            guard let self = self else { return }
-            
-            self.viewModel.showInfo()
+            self?.viewModel.showInfo()
         }).disposed(by: disposeBag)
         
     }
     
-    // MARK: - Private functions
+    // MARK: - Private methods
     
     private func addContainerViewController(_ homeState: HomeStateType) {
         animateSelectionContainer(withHeight: homeState.height) { finished in

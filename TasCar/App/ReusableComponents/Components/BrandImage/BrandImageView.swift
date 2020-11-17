@@ -12,7 +12,11 @@ import Kingfisher
 
 final class BrandImageView: BaseView {
     
+    // MARK: - Attributes UI
+    
     @IBOutlet weak var brandImageView: UIImageView!
+    
+    // MARK: - ViewModel
     
     var viewModel = BrandImageViewModel()
     
@@ -49,15 +53,13 @@ final class BrandImageView: BaseView {
         super.setupRx()
         
         viewModel.image.subscribe(onNext: { [weak self] image in
-            guard let self = self else { return }
-            
-            self.brandImageView.image = image
+            self?.brandImageView.image = image
         }).disposed(by: disposeBag)
         
         viewModel.color.subscribe(onNext: { [weak self] color in
-            guard let self = self, let color = color else { return }
+            guard let color = color else { return }
             
-            self.view.backgroundColor = color
+            self?.view.backgroundColor = color
         }).disposed(by: disposeBag)
         
     }

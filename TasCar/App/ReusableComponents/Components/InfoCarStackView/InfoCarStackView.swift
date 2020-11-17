@@ -12,10 +12,14 @@ import Kingfisher
 
 final class InfoCarStackView: BaseView {
     
+    // MARK: - Attributes UI
+    
     @IBOutlet private weak var infoStackView: UIStackView!
     @IBOutlet weak var modelLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
+    
+    // MARK: - ViewModel
     
     var viewModel = InfoCarStackViewModel()
     
@@ -53,38 +57,34 @@ final class InfoCarStackView: BaseView {
         super.setupRx()
         
         viewModel.color.subscribe(onNext: { [weak self] color in
-            guard let self = self else { return }
-            
-            self.view.backgroundColor = color
-            self.modelLabel.setup(withColor: color)
-            self.typeLabel.setup(withColor: color)
-            self.yearLabel.setup(withColor: color)
+            self?.view.backgroundColor = color
+            self?.modelLabel.setup(withColor: color)
+            self?.typeLabel.setup(withColor: color)
+            self?.yearLabel.setup(withColor: color)
         }).disposed(by: disposeBag)
         
         viewModel.visible.subscribe(onNext: { [weak self] visible in
-            guard let self = self else { return }
-            
-            self.isHidden = !visible
+            self?.isHidden = !visible
         }).disposed(by: disposeBag)
         
         viewModel.carHelper.subscribe(onNext: { [weak self] helper in
-            guard let self = self, let helper = helper else { return }
+            guard let helper = helper else { return }
           
             if let model = helper.model {
-                self.modelLabel.text = model
-                self.modelLabel.isHidden = model.isEmpty    
+                self?.modelLabel.text = model
+                self?.modelLabel.isHidden = model.isEmpty
             }
             if let type = helper.type {
-                self.typeLabel.text = type
-                self.typeLabel.isHidden = type.isEmpty
+                self?.typeLabel.text = type
+                self?.typeLabel.isHidden = type.isEmpty
             } else {
-                self.typeLabel.isHidden = true
+                self?.typeLabel.isHidden = true
             }
             if let year = helper.year {
-                self.yearLabel.text = year
-                self.yearLabel.isHidden = year.isEmpty
+                self?.yearLabel.text = year
+                self?.yearLabel.isHidden = year.isEmpty
             } else {
-                self.yearLabel.isHidden = true
+                self?.yearLabel.isHidden = true
             }
         }).disposed(by: disposeBag)
         

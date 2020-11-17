@@ -49,7 +49,7 @@ DEPENDENCIES:
   - SwiftLint
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Action
     - Alamofire
     - CocoaLumberjack
@@ -89,4 +89,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: ffdd6707d1c16bd1c410030441190e1197eb31d8
 
-COCOAPODS: 1.6.2
+COCOAPODS: 1.9.1

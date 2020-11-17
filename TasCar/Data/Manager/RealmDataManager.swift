@@ -21,7 +21,9 @@ final class RealmDataManager {
     
     func list<T: Object>(type: T.Type) -> Single<[T]> {
         return Observable.deferred { () -> Observable<[T]> in
-            guard let realm = try? Realm(configuration: RealmConfiguration.config) else { return Observable.error(RealmDataManagerError.unknown) }
+            guard let realm = try? Realm(configuration: RealmConfiguration.config) else {
+                return Observable.error(RealmDataManagerError.unknown)
+            }
             
             return Observable.of(realm.objects(type).sorted(byKeyPath: "name").toArray())
             }
@@ -30,7 +32,9 @@ final class RealmDataManager {
  
     func listCars(withBrand brand: Brand? = nil, withModel model: String? = nil) -> Single<[CarEntity]> {
         return Observable.deferred { () -> Observable<[CarEntity]> in
-            guard let realm = try? Realm(configuration: RealmConfiguration.config) else { return Observable.error(RealmDataManagerError.unknown) }
+            guard let realm = try? Realm(configuration: RealmConfiguration.config) else {
+                return Observable.error(RealmDataManagerError.unknown)
+            }
             
             let predicate: NSPredicate
             switch (brand, model) {

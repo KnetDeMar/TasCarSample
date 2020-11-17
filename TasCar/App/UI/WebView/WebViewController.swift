@@ -11,10 +11,18 @@ import WebKit
 
 final class WebViewController: BaseViewController<WebViewModel> {
     
+    // MARK: - Attributes UI
+    
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var closeButton: UIButton!
     
-    private let imageInset = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+    // MARK: - Constants
+    
+    private enum Constants {
+        static let imageInset = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+    }
+    
+    // MARK: - ViewModel
     
     override func createViewModel() -> WebViewModel {
         return WebViewModel()
@@ -32,28 +40,24 @@ final class WebViewController: BaseViewController<WebViewModel> {
         super.setupLayout()
         
         closeButton.setTitle("", for: .normal)
-        closeButton.imageEdgeInsets = imageInset
+        closeButton.imageEdgeInsets = Constants.imageInset
     }
     
     override func setupRx() {
         super.setupRx()
      
         closeButton.rx.tap.subscribe(onNext: { [weak self] _ in
-            guard let self = self else { return }
-            
-            self.viewModel.dismiss()
+            self?.viewModel.dismiss()
         }).disposed(by: disposeBag)
         
         viewModel.color.subscribe(onNext: { [weak self] color in
-            guard let self = self else { return }
-            
-            self.closeButton.setImage(ThemeImage.close.image.fillAlpha(fillColor: color), for: .normal)
+            self?.closeButton.setImage(ThemeImage.close.image.fillAlpha(fillColor: color), for: .normal)
         }).disposed(by: disposeBag)
         
         viewModel.url.subscribe(onNext: { [weak self] url in
-            guard let self = self, let url = url else { return }
+            guard let url = url else { return }
             
-            self.webView.load(URLRequest(url: url))
+            self?.webView.load(URLRequest(url: url))
         }).disposed(by: disposeBag)
     }
     

@@ -10,12 +10,30 @@ import UIKit
 
 final class BrandCollectionViewController: BaseViewController<BrandCollectionViewModel>, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    // MARK: - Constants
+    
+    private enum Constants {
+        static let flowEdgeInsets = UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
+        static let numberOfCells: CGFloat = 4.0
+        static let itemWidthPercentage: CGFloat = 1.0
+    }
+    
+    // MARK: - Attributes UI
+    
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    private let flowEdgeInsets = UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
-    private let numberOfCells: CGFloat = 4.0
-    private let brandListFlowLayout = UICollectionViewFlowLayout()
-    private let itemWidthPercentage: CGFloat = 1.0
+    // MARK: - Attributes
+    
+    private let brandListFlowLayout: UICollectionViewFlowLayout = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.sectionInset = Constants.flowEdgeInsets
+        flowLayout.minimumLineSpacing = .zero
+        flowLayout.minimumInteritemSpacing = .zero
+        flowLayout.headerReferenceSize = .zero
+        flowLayout.footerReferenceSize = .zero
+        flowLayout.scrollDirection = .vertical
+        return flowLayout
+    }()
     
     override func createViewModel() -> BrandCollectionViewModel {
         return BrandCollectionViewModel()
@@ -26,7 +44,6 @@ final class BrandCollectionViewController: BaseViewController<BrandCollectionVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupFlowLayout()
         setupCollectionView()
     }
     
@@ -36,36 +53,24 @@ final class BrandCollectionViewController: BaseViewController<BrandCollectionVie
         setupItemSize()
     }
     
+    // MARK: - Setups
+    
     override func setupRx() {
         super.setupRx()
         
         viewModel.brandModelList.asObservable().subscribe(onNext: { [weak self] _ in
-            guard let self = self else { return }
-            
-            self.collectionView.reloadData()
+            self?.collectionView.reloadData()
         }).disposed(by: disposeBag)
         
         viewModel.reloadIndexPath.asObservable().subscribe(onNext: { [weak self] indexPathList in
-            guard let self = self else { return }
-            
-            self.collectionView.reloadItems(at: indexPathList)
+            self?.collectionView.reloadItems(at: indexPathList)
         }).disposed(by: disposeBag)
     }
     
     // MARK: - Private setups
     
-    private func setupFlowLayout() {
-        brandListFlowLayout.sectionInset = flowEdgeInsets
-        brandListFlowLayout.minimumLineSpacing = CGFloat.zero
-        brandListFlowLayout.minimumInteritemSpacing = CGFloat.zero
-        brandListFlowLayout.headerReferenceSize = CGSize.zero
-        brandListFlowLayout.footerReferenceSize = CGSize.zero
-        brandListFlowLayout.scrollDirection = .vertical
-        setupItemSize()
-    }
-    
     private func setupItemSize() {
-        let size = ((collectionView.frame.width - brandListFlowLayout.sectionInset.left - brandListFlowLayout.sectionInset.right) / numberOfCells).rounded(.down)
+        let size = ((collectionView.frame.width - brandListFlowLayout.sectionInset.left - brandListFlowLayout.sectionInset.right) / Constants.numberOfCells).rounded(.down)
         brandListFlowLayout.itemSize = CGSize(width: size, height: size)
     }
     
@@ -78,7 +83,7 @@ final class BrandCollectionViewController: BaseViewController<BrandCollectionVie
         registerCollectionCells()
     }
     
-    // MARK: - Private functions
+    // MARK: - Private methods
     
     private func registerCollectionCells() {
         BrandCollectionViewCell.register(collectionView: collectionView, cellClass: BrandCollectionViewCell.self)
@@ -92,7 +97,9 @@ final class BrandCollectionViewController: BaseViewController<BrandCollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let collectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: viewModel.cellIdentifier(indexPath: indexPath), for: indexPath) as? BrandCollectionViewCell, let viewModel = viewModel.cellViewModel(indexPath: indexPath) as? BrandCollectionViewCellModel {
+        let reuseIdentifier = viewModel.cellIdentifier(indexPath: indexPath)
+        if let collectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? BrandCollectionViewCell,
+            let viewModel = viewModel.cellViewModel(indexPath: indexPath) as? BrandCollectionViewCellModel {
             collectionViewCell.set(viewModel: viewModel)
             return collectionViewCell
         }

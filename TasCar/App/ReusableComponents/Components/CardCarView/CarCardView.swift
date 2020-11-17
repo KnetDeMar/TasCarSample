@@ -12,9 +12,13 @@ import Kingfisher
 
 final class CarCardView: BaseView {
     
+    // MARK: - Attributes UI
+    
     @IBOutlet private weak var carImageView: UIImageView!
     @IBOutlet private weak var infoButton: UIButton!
     @IBOutlet private var carImageHeightConstraint: NSLayoutConstraint!
+    
+    // MARK: - ViewModel
     
     var viewModel = CarCardViewModel()
     
@@ -51,15 +55,11 @@ final class CarCardView: BaseView {
         super.setupRx()
         
         infoButton.rx.tap.subscribe(onNext: { [weak self] _ in
-            guard let self = self else { return }
-            
-            self.viewModel.tapOnInfo()
+            self?.viewModel.tapOnInfo()
         }).disposed(by: disposeBag)
         
         viewModel.color.subscribe(onNext: { [weak self] color in 
-            guard let self = self else { return }
-            
-            self.infoButton.setupByType(.info, withColor: color)
+            self?.infoButton.setupByType(.info, withColor: color)
         }).disposed(by: disposeBag)
         
         viewModel.imageHeight.bind { [weak self] imageHeight in
@@ -70,9 +70,9 @@ final class CarCardView: BaseView {
         }.disposed(by: disposeBag)
         
         viewModel.loadingAction.elements.subscribe(onNext: { [weak self] url in
-            guard let self = self, let url = url else { return }
+            guard let url = url else { return }
 
-            self.carImageView.kf.setImage(with: LocalFileImageDataProvider(fileURL: url))
+            self?.carImageView.kf.setImage(with: LocalFileImageDataProvider(fileURL: url))
         }).disposed(by: disposeBag)
         
     }

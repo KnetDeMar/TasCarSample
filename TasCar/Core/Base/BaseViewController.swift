@@ -12,6 +12,8 @@ import CocoaLumberjack
 
 class BaseViewController<VM: BaseViewModel>: UIViewController {
     
+    // MARK: - Attributes
+    
     var disposeBag = DisposeBag()
     var viewModel: VM!
     
@@ -74,7 +76,7 @@ class BaseViewController<VM: BaseViewModel>: UIViewController {
         viewModel.setup(withPresenter: self)
     }
     
-    // MARK: - Public functions
+    // MARK: - Public methods
     
     func showAlert(title: String = "title".localized, message: String = "unknown".localized) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -82,7 +84,7 @@ class BaseViewController<VM: BaseViewModel>: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    // MARK: - Private functions
+    // MARK: - Private methods
     
     private func showAlert(error: Error? = nil) {
         guard let error = error else { return }

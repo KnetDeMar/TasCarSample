@@ -46,8 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setupUITests() {
-        guard CommandLine.arguments.contains("--uitesting") else { return }
-            
+        guard CommandLine.arguments.contains("--uitesting") else { return }  
     }
     
 }

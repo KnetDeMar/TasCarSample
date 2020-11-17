@@ -10,8 +10,12 @@ import RxSwift
 
 final class BrandImageViewModel {
     
+    // MARK: - Attributes
+    
     let image = BehaviorSubject<UIImage?>(value: nil)
     let color = BehaviorSubject<UIColor?>(value: nil)
+    
+    // MARK: - Setups
     
     func setup(withImage image: UIImage?) {
         self.image.onNext(image)
